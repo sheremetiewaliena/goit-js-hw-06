@@ -13,7 +13,6 @@ class StringBuilder {
     padStart(str) {
     return this.#value = str + this.#value
   }
-
   padBoth(str) {
     return this.#value = str + this.#value + str
   }
