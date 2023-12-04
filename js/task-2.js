@@ -12,13 +12,17 @@ class Storage {
   }
   removeItem(itemToRemove) {
     const index = this.#items.indexOf(itemToRemove);
+    if (index === -1) {
+      console.log('Такого товару немає на складі!');
+      return;
+    }
     this.#items.splice(index, 1);
   }
 }
 
-const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
+const storage = new Storage(['Nanitoids', 'Prolonger', 'Antigravitator']);
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
-storage.addItem("Droid");
+storage.addItem('Droid');
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
-storage.removeItem("Prolonger");
+storage.removeItem('Prolonger');
 console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
